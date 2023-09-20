@@ -1,11 +1,12 @@
 package gestion;
 
 import java.util.ArrayList;
+import java.util.List; 
 
 public class Zoologico {
     private String nombre;
     private String ubicacion;
-    private ArrayList<Zona> zonas = new ArrayList<>();;;
+    private List<Zona> zonas = new ArrayList<>();;;
 
     public Zoologico(String nombre, String ubicacion) {
         this.nombre = nombre;
@@ -13,7 +14,6 @@ public class Zoologico {
     }
 
     public Zoologico() {
-        this(null, null);
     }
 
     public String getNombre() {
@@ -32,8 +32,8 @@ public class Zoologico {
         this.ubicacion = ubicacion;
     }
 
-    public ArrayList<Zona> getZona() {
-        return zonas;
+    public List<Zona> getZona() {
+        return this.zonas;
     }
 
     public void setZona(ArrayList<Zona> zonas) {
@@ -41,15 +41,14 @@ public class Zoologico {
     }
 
     public int cantidadTotalAnimales() {
-        int cantidad = 0;
-        for (Zona zona : zonas) {
-            cantidad += zona.cantidadAnimales();
-        }
-        return cantidad;
+    	int totalAnimales = 0;
+		for(int i=0; i<zonas.size();i++){
+			totalAnimales+= zonas.get(i).cantidadAnimales();
+		}
+		return totalAnimales;
     }
 
     public void agregarZonas(Zona zona) {
         this.zonas.add(zona);
-        zona.setZoo(this);
     }
 }

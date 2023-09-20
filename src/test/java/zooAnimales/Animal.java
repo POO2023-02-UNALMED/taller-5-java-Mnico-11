@@ -22,15 +22,16 @@ public class Animal {
 	public String getNombre() {
 		return nombre;
 	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 	public static int getTotalAnimales() {
 		return totalAnimales;
 	}
 	public static void setTotalAnimales(int totalAnimales) {
 		Animal.totalAnimales = totalAnimales;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+	
 	public int getEdad() {
 		return edad;
 	}
