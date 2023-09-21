@@ -1,25 +1,24 @@
 package zooAnimales;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Reptil extends Animal {
 	public static int iguanas;
 	public static int serpientes;
 	private String colorEscamas;
 	private int largoCola;
-	private static List<Reptil> reptiles = new ArrayList<>();
+	private static ArrayList<Reptil> reptiles = new ArrayList<>();
 	
-	public Reptil(String nombre,int edad,String habitat,String  genero, String colorEscamas, int largoCola){
+	public Reptil(){
+		reptiles.add(this);
+	}
+	public Reptil(String nombre,int edad,String habitat,String genero, String colorEscamas, int largoCola){
 		super(nombre, edad, habitat, genero);
 		this.largoCola=largoCola;
 		this.colorEscamas=colorEscamas;
 		reptiles.add(this);
 	}
-	public Reptil(){
-		super();
-		reptiles.add(this);
-	}
+
 	public static Reptil crearIguana(String nombre,int edad,String genero){
 		iguanas++;
 		return new Reptil(nombre, edad, "humedal", genero, "verde", 3);
